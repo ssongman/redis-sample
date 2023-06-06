@@ -17,6 +17,12 @@ public class PersonController {
     @Autowired
     private PersonRedisRepository repo;
 
+    @GetMapping("/health")
+	public String getHealth() {
+    	System.out.println("[getHealth]-----");
+    	return "OK";
+    }
+
     @PostMapping("/person")
 	public Person setPerson(@RequestBody Person person) {
     	System.out.println("[setPerson]-----");
