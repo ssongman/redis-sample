@@ -9,6 +9,16 @@ spring:
         max-active: 8   # pool에 할당할수 있는 커넥션 최대수(default:8)
         max-idle: 8     # pool의 idle 커넥션 최대수(default:8)
         min-idle: 0     # pool의 idle 커넥션 최소수(default:0)
-    host: 35.209.207.26  # 
-    port: 32300
+        
     password: 'new1234'
+    
+    #####[redis cluster 일 경우]#####
+    cluster:
+      nodes: my-release-redis-cluster:6379
+      
+        
+    #####[redis 일 경우]#####
+    #host: 35.209.207.26  #
+    #port: 32300
+    #####[redis일경우]#####
+    

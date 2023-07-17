@@ -64,6 +64,26 @@
                     <includeSystemScope>true</includeSystemScope>
                 </configuration>
 			</plugin>
+			<plugin>
+				  <groupId>com.google.cloud.tools</groupId>
+				  <artifactId>jib-maven-plugin</artifactId>
+				  <version>1.0.0</version>
+				  <configuration>
+				      <from>
+					    <image>tomcat:jre11-temurin</image>    
+					  </from>
+					  <to>
+					    <image>docker.io/ssongman/redis-sample</image>					    
+					    <auth>
+					      <username>${env.REGISTRY_USERNAME}</username>
+					      <password>${env.REGISTRY_PASSWORD}</password>
+					    </auth>
+					  </to>
+					  <container>
+					    <appRoot>/usr/local/tomcat/webapps/my-webapp</appRoot>
+					  </container>
+				  </configuration>
+			</plugin>
 		</plugins>
 	</build>
     

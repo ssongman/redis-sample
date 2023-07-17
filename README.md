@@ -1,6 +1,42 @@
 
 
-# curl test
+# 1. jib build
+
+```sh
+
+# 빌드하고 레지스트리로 전송
+$ mvn compile jib:build \
+    -Djib.to.auth.username=ssongman \
+    -Djib.to.auth.password=my-password
+
+
+# 도커 데몬 빌드
+$ mvn compile jib:dockerBuild
+
+
+# pom 파일과 관계없이 컨테이너화 
+$ mvn compile com.google.cloud.tools:jib-maven-plugin:1.0.0:build -Dimage=docker.io/ssongman/redis-sample
+
+
+# war 로 패키징
+$ mvn package jib:build
+
+```
+
+
+
+
+# 2. curl test
+
+
+
+## 0) health check
+
+
+```sh
+curl -X GET http://localhost:8082/health
+
+```
 
 
 

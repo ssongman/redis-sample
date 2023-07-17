@@ -42,4 +42,10 @@ public class PersonController {
     	return;
     }
 
+    @GetMapping("/get/{key}")
+	public Person getKey(@PathVariable("key") String key) {
+    	System.out.println("[get key]-----");
+    	return repo.findById(key).get();
+    }
+
 }
